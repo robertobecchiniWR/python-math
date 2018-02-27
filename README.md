@@ -1,7 +1,6 @@
 # Python presentation for PhD seminar (19/03/2018, 17-18h)
 
-Contains different sub-directories dedicated to particular point of python-learning.
-Preferably in complexity order ;).
+Or, how to introduce python to applied & pure mathematics PhD students ...
 
 ## presentation
 

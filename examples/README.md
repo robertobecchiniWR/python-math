@@ -1,6 +1,6 @@
 # Example directory
 
-Contains different sub-directories dedicated to particular point of python-learning.
+Contains different sub-directories dedicated to particular points of python-learning.
 Preferably in complexity order ;).
 
 ## 01-example1
