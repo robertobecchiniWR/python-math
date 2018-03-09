@@ -1,11 +1,35 @@
-\documentclass{beamer}
+\documentclass[11pt,unknownkeysallowed,usenames,dvipsnames]{beamer}
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath}
 \usetheme{metropolis}
 
+% A font that I found more "classy" than the default one ...
+% -- just comment the three next lines if you hate it ;)
+\usepackage{libertine}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage[T1]{fontenc}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{hyperref}
+\hypersetup{colorlinks,breaklinks,
+    urlcolor=teal,linkcolor=teal,citecolor=teal}
+\usepackage{minted}
+\graphicspath{{img/}}
+
+% Beamer settings
 \setbeamercolor{block title}{bg=gray!30}
 \setbeamercolor{block body}{bg=gray!10}
+\setbeamersize{text margin left=16pt,text margin right=16pt}
 
+% Set minted options
+\newminted{python}{fontsize=\scriptsize, 
+    linenos=false,
+    numbersep=8pt,
+    gobble=4,
+    bgcolor=gray!10,
+    fontfamily=courier}
+
+% Title and ...
 \title{An introduction to Python}
 \author{Thibaut Lunet, Aitor Pérez}
 
@@ -14,79 +38,233 @@
 \begin{document}
 	\maketitle
 	
+   	\begin{frame}{How to get Python (+ useful packages ...)}
+        We are going to use the \textbf{miniconda} installer, which is cross-platform and provides package management, together with the \textbf{spyder} IDE.
+        
+        \begin{enumerate}
+            \item Go to \href{https://conda.io/miniconda.html}{https://conda.io/miniconda.html} \\ (or Google search : "miniconda download")
+            \item Depending on the operating system, download installer (Python 2.7)
+            \item Install Python and required packages
+            \begin{itemize}
+                \item Mac OS X or Unix:
+                \begin{enumerate}
+                    \item Open a terminal
+                    \item Run "bash Miniconda[...].sh", and yes for all ...
+                    \item Open a new terminal, or run "source $\sim$/.bashrc"
+                    \item Run "conda install spyder numpy scipy matplotlib sympy"
+                \end{enumerate}
+                \item Windows:
+                \begin{enumerate}
+                    \item Double-click on the .exe file, and yes for all ...
+                    \item Open "conda prompt" terminal (installed with miniconda)
+                    \item Run "conda install spyder numpy scipy matplotlib sympy"
+                \end{enumerate}
+            \end{itemize}
+        \end{enumerate}
+    \end{frame}
+    
 	\begin{frame}{History}
 		XXX slkdjlksj
 	\end{frame}
 
-	\begin{frame}{Functioning principles}
-		XXX dsdskldj
-		
-		
-		\begin{block}{slkdfjslk}
-			kdjfkdjfkdj
-		\end{block}
-	\end{frame}
-
-
-	\begin{frame}{MATLAB vs. Python}
-		Some drawbacks of MATLAB:
-		\begin{itemize}
-			\item It is a proprietary software
-			\item It does not scale properly to big projects
-			\item Hard to work with in a general framework other than numerical computing
-			\item Tricky code organization (function name = file name)
-			\item Toolboxes are distributed/purchased separately
-		\end{itemize}
+	\begin{frame}{Python vs. every one else (Matlab, Fortran, C++, ...)}
+        \begin{itemize}
+            \item License-free and open-source ($\neq$ Matlab)
+            \item Huge users community, many (free) packages for many applications
+            \item Extremely easy of use for non-I-love-programming people \\ ($\neq$ Fortran, C, C++)
+            \item Easy interface with other (more-efficient) programming languages \\
+            $\Rightarrow$ computation can be accelerated using Fortran, C, C++
+            library ... 
+            \item Can scale to very large problems (parallel computing, ...)
+            \item Structured and friendly ways for developing library ($\neq$ Matlab)
+        \end{itemize}
+%		Some drawbacks of MATLAB:
+%		\begin{itemize}
+%			\item It is a proprietary software
+%			\item It does not scale properly to big projects
+%			\item Hard to work with in a general framework other than numerical computing
+%			\item Tricky code organization (function name = file name)
+%			\item Toolboxes are distributed/purchased separately
+%		\end{itemize}
 	
 		\vspace{10pt}
 	
-		Python solves all of these problems!
+		\begin{center}
+            Python = many advantages, with very few drawbacks !
+        \end{center}
 	\end{frame}
+    
+	\begin{frame}{Functioning principles}
+        XXX dsdskldj
+        
+    \end{frame}
 
-	\begin{frame}{How to get Python}
-		We are going to use the \textbf{miniconda} installer, which is cross-platform and provides package management, together with the \textbf{spyder} IDE.
-		
-		\begin{enumerate}
-			\item XXX Thibaut
-			\item Peux-tu completer
-			\item Cette liste de choses à faire
-			\item Pour obtenir miniconda + spyder?
-			\item Merci! :D
-		\end{enumerate}
-	\end{frame}
 
 	\begin{frame}{Practical tools}
-		XXX jfdhjfhdf
+        \vspace{5pt}
+        \begin{block}{Using python console}
+        \centering
+        \includegraphics[width=0.95\linewidth]{python-terminal}
+        \end{block}
+        
+        \begin{block}{Running a script}
+        \centering
+        \includegraphics[width=0.95\linewidth]{python-script}
+        \end{block}
+        \vspace{-10pt}
+        \begin{center}
+            All-in-One solution $\Rightarrow$ \textbf{Spyder} !
+        \end{center}
+        \vspace{-10pt}
 	\end{frame}
+    
+	\begin{frame}{Hello World!}
+        \begin{center}
+            All the examples and python files are available at: \\
+            \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math}{https://gitlab.unige.ch/Thibaut.Lunet/python-math}
+        \end{center}
+        
+        \begin{block}{A first easy step ...}
+            \begin{enumerate}
+                \item Launch Spyder
+                \begin{itemize}
+                    \item Windows : double click on an icon somewhere ...
+                    \item Mac OS X or Unix : run "spyder" in terminal
+                \end{itemize}
+                \item Discover a wonderful environment \#woaaah
+                \item Go to lower right corner $\rightarrow$ IPython console
+                \begin{itemize}
+                    \item write "1+1"
+                    \item press enter ...
+                \end{itemize}
+                \item Go to text editor (middle)
+                \begin{itemize}
+                    \item write "print('hello world')
+                    \item save and run the file ...
+                \end{itemize}
+            \end{enumerate}
+        \end{block}
+        
+    \end{frame}
+    
+    
+\defverbatim[colored]\pythonCode{
+\begin{pythoncode}     
+       
+    # Integer
+    i1 = 1
+    i2 = 7 % 3  # i2 = 1
+    
+    # Float -- by default, double precision !
+    f1 = 0.5 
+    f2 = f1/7  # f2 = 0.07142857142857142
+    
+    # Complex
+    c1 = 1+1j
+    c2 = c1 + f1 + i1  # Automatic conversion, c2 = 2.5 + 1j
+    
+    # String
+    s1 = 'salut'
+    s2 = 'toi'
+    s3 = s1 + s2  # s3 = 'saluttoi'
+    
+    # Boolean
+    b1 = True
+    b2 = (i1 != 1)*b1 + (i1 == 1)*(f1 < 10)*(f2 >= 0)  # b2 = True
+        
+\end{pythoncode}
+}    
+\begin{frame}{Basic variables types and operations}
+    \pythonCode
+\end{frame}
 
-	\begin{frame}{Basic commands}
-		\begin{itemize}
-			\item Basic arithmetic logic operations: \texttt{+}, \texttt{-}, \texttt{*}, \texttt{/}, \texttt{\%}, \texttt{<}, \texttt{<=}, \texttt{==}, \texttt{!=}, \texttt{and}, \texttt{or}, \texttt{not}, etc.
-			\item No need to declare variables
-			\item Basic types: \texttt{int}, \texttt{float}, \texttt{double}, \texttt{complex}, \texttt{bool}, \texttt{str}
-			\item Container types: \texttt{list}, \texttt{dict}
-			\item Tabs matter!
-		\end{itemize}
-	
-		XXX À completer: ajouter exemples (images?) pour chaque point.
-		
-	\end{frame}
 
-	\begin{frame}{Hello world!}
-		XXX Juste un exercice pour voir s'ils ont bien installé python et spyder.
-	\end{frame}
 
-	\begin{frame}{Lists}
-		Python allows to use list comprehension:
-		
-		\includegraphics[height=20pt]{img/lists.png}
-		
-		\vspace{20pt}
-		
-		\begin{block}{Exercise 1}
-			Rewrite the \texttt{filter\_positive} function and reduce it to one line.
-		\end{block}
-	\end{frame}
+\defverbatim[colored]\pythonCode{
+\begin{pythoncode}           
+    # List
+    l1 = [1, 2, 5, 6]
+    # Access elements : l1[0] = 1, l1[2] = 5, l1[-1] = 6 
+    # Slice : l1[1:3] = [2, 5]
+    
+    # Nested list
+    l2 = [ ['vive', 'la'], ['saucisse', 2], 'Toulouse']
+    # Extract sub-list : l2[0] = ['vive', 'la'] 
+    # Access element : l2[0][1] = 'la', l2[1][0] = 'saucisse'
+    
+\end{pythoncode}
+}    
+\begin{frame}{Lists}
+    \pythonCode\vspace{-20pt}
+    Python allows to use list comprehension:
+    
+    \includegraphics[height=20pt]{lists.png}
+    
+    \vspace{20pt}
+    
+    \begin{block}{Exercise 1}
+        Rewrite the \texttt{filter\_positive} function and reduce it to one line.
+    \end{block}
+\end{frame}
+
+
+\begin{frame}{Dictionary}
+    TODO
+\end{frame}
+
+
+\defverbatim[colored]\pythonCode{
+\begin{pythoncode}           
+    # For loop
+    for i in range(5):
+        print('i = {}'.format(i))
+        
+    # If condition
+    if 1 == 2:
+        print('Tocard')
+    elif 1 == 0:  # Not mandatory
+        print('Toujours pas')
+    else:  # Not mandatory
+        print("OK d'accord")
+        
+    # While loop
+    i = 0
+    while i < 10:
+        print('TAIHOOO-'+str(i))
+        i += 1
+        if i == 5:
+            break  # Allows to escape from the while loop
+    
+\end{pythoncode}
+}    
+\begin{frame}{Basic structures}
+    \vspace{-5pt}
+    \begin{center}
+        \textbf{Tabs matter !}
+    \end{center}
+    \vspace{-10pt}
+    \pythonCode
+
+\end{frame}
+
+
+
+\defverbatim[colored]\pythonCode{
+\begin{pythoncode}           
+    def funcA(a, b=1):
+        return a + b
+    # funcA(0.5, 2) = funcA(0.5, b=2) = 2.5
+    # funcA(1) = 1.5
+    # funcA() -> ERROR
+    
+\end{pythoncode}
+}    
+\begin{frame}{Function definition}
+    \pythonCode
+    to be continued ...
+    
+\end{frame}
+   
 
 	\begin{frame}{File I/O}
 		XXX sdjhj
