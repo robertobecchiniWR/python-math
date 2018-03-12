@@ -1,0 +1,16 @@
+An introduction to Python
+
+Nowadays, researchers widely rely on computer programming for their daily work, to
+perform numerical experiments, solve problems that cannot be computed by hand,
+and even sometimes assess calculation and proof (e.g with symbolic computation).
+As many solutions already exists for those purposes, the (licence-free) Python language has the leading advantage
+of combining all thoses functionnalities, along with an user-friendly way of coding, that also
+allows highly efficient computation.
+
+In this seminar, we intend to introduce the main features of Python programming, by means of on-hand examples and applications during which each participant could try some basic Python coding on their personal laptop.
+In particular, several themes will be shortly browsed :
+- what is python, and how to get is easily with Miniconda and Spyder,
+- basic python programming and file manipulation,
+- efficient numerical computation with Numpy and Scipy,
+- data visualization with Matplotlib,
+- symbolic computation with Sympy.
