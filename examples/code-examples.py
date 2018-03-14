@@ -76,21 +76,21 @@ while i < 10:
 
 # %% Slide : Function definition
 def funcA(a, b=1):
-    print(a + b)
+    return a + b
 
 
-funcA(1)  # Print 2, default value (1) used for b
-funcA(0.5, 2)  # Print 2.5, 2 is used for b
-funcA(0.5, b=2)  # Equivalent way to set b=2
+print(funcA(1))  # Print 2, default value (1) used for b
+print(funcA(0.5, 2))  # Print 2.5, 2 is used for b
+print(funcA(0.5, b=2))  # Equivalent way to set b=2
 # funcA() -> ERROR : at least a must be given
 
 
-# Arguments can be passed as dictionnary
+# Arguments can be passed as dictionnary for multi-argument functions like :
 def funcB(x, y, p1=None, p2=1, p3='o', p4=False):
-    print('{}, {} -- p1={}, p2={}, p3={}, p4={}'.format(x, y, p1, p2, p3, p4))
+    return '{}, {} -- p1={}, p2={}, p3={}, p4={}'.format(x, y, p1, p2, p3, p4)
 
 
 # -- Arguments are only written once
 kwargs = {'p1': 12, 'p2': 2, 'p3': 'i', 'p4': True}
-funcB(1, 2, **kwargs)  # Print 1, 2 -- p1=12, p2=2, p3=i, p4=True
-funcB('a', 'b', **kwargs)  # Print a, b -- p1=12, p2=2, p3=i, p4=True
+print(funcB(1, 2, **kwargs))  # Print 1, 2 -- p1=12, p2=2, p3=i, p4=True
+print(funcB('a', 'b', **kwargs))  # Print a, b -- p1=12, p2=2, p3=i, p4=True
