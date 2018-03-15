@@ -1,4 +1,4 @@
-# Slide : Basic variables types and operations
+# Slide: Basic variables types and operations
 # To run this block : ctrl + enter or
 
 # Integer
@@ -22,7 +22,7 @@ r = s + t  # r = 'saluttoi'
 p = True
 q = (n != 1)*p + (n == 1)*(x < 10)*(y >= 0)  # q = True = 1
 
-# %% Slide : Lists
+# %% Slide: Lists
 
 # Lists
 l = [1, 2, 5, 6]
@@ -38,7 +38,7 @@ nl = [['vive', 'la'], ['saucisse', 2], 'Toulouse']
 l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 l2 = [3 * n + 1 for n in l1 if n % 2 == 0]
 # l2 = [7, 13, 19, 25, 31]
-# %% Slide : Dictionaries
+# %% Slide: Dictionaries
 
 # Dictionaries
 d = {'first': 1,
@@ -51,7 +51,7 @@ d = {'first': 1,
 #                   d['third']['B'] = True
 
 
-# %% Slide : Conditional structures
+# %% Slide: Conditional structures
 
 # If clause
 if 1 == 2:
@@ -74,7 +74,7 @@ while i < 10:
         break  # Allows to escape from the while loop
 
 
-# %% Slide : Function definition
+# %% Slide: Function definition
         
 def add(a, b = 1):
     return a + b
@@ -88,7 +88,7 @@ def add(a, b = 1):
 # Possibility of having a variable number of parameters
     
 
-# %% Slide : File IO
+# %% Slide: File IO
     
 infile = open("infile.dat", "r")
 # Opens the file for reading
@@ -115,7 +115,7 @@ outfile.close()
 # Close file to release memory
         
 
-# %% Slide : Numpy
+# %% Slide: Numpy
 
 import numpy as np
 # Import the package
@@ -165,6 +165,38 @@ A * C           # Elementwise product
 A / C           # Elementwise division
 np.dot(A, B)    # Matrix product
 # And lots of other built-in functions!
+
+# %% Slide: Matplotlib
+
+import numpy as np
+import matplotlib.pyplot as plt
+# Import the packages
+
+x = np.arange(0, 3 * np.pi, 0.1)
+sinx = np.sin(x)
+cosx = np.cos(x)
+# We generate the data we want to visualize
+
+plt.plot(x, sinx)                   # Draws the points (x, sinx)
+plt.plot(x, cosx)                   # Draws the points (x, cosx)
+plt.xlabel('x axis label')          # Adds a label to the x-axis
+plt.ylabel('y axis label')          # Adds a label to the y-axis
+plt.title('Sine and Cosine')        # Adds a title
+plt.legend(['sin(x)', 'cos(x)'])    # Adds a legend
+plt.show()                          # Actually shows the plot
+
+
+# We can also display several plots at once:
+plt.subplot(2, 1, 1)        # 2x1 grid, select the first as active
+plt.plot(x, sinx)
+plt.title('Sine')
+
+plt.subplot(2, 1, 2)        # 2x1 grid, select the second as active
+plt.plot(x, cosx)
+plt.title('Cosine')
+
+plt.show()
+
 
 
 # %% Old Slide : Function definition

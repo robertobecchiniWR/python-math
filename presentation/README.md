@@ -21,7 +21,7 @@ Contains *.tex*, *.pdf*, etc ... files for the presentation of the PhD seminar.
     - [x] File I/O : reading and writing a file (from simple text, and examples of more complex tools ...) (AP)
     - [x] Using Numpy to manipulate arrays (AP)
     - [x] Overview of Scipy functionalities (AP)
-    - [ ] Data visualization with Matplotlib (AP)
+    - [x] Data visualization with Matplotlib (AP)
     - [ ] Symbolic computation with Sympy (AP)
 
 [MarkDown documentation](https://docs.gitlab.com/ee/user/markdown.html) - General synthax for *.md* files
