@@ -75,11 +75,12 @@ while i < 10:
 
 
 # %% Slide : Function definition
-def funcA(a, b=1):
+        
+def add(a, b = 1):
     return a + b
-# funcA(0.5, 2) = funcA(0.5, b=2) = 2.5
-# funcA(1) = 2
-# funcA() -> ERROR
+# add(0.5, 2) = add(0.5, b = 2) = 2.5
+# add(1) = 2
+# add() -> ERROR
 
 
 def funcB(*args, **kwargs):
@@ -95,6 +96,6 @@ def funcB(*args, **kwargs):
 
 # Example of kwargs use
 kwargs = {'b': 12}
-print(funcA(1, **kwargs))  # Returns 13
+print(add(1, **kwargs))  # Returns 13
 kwargs['b'] = 0
-print(funcA(1, **kwargs))  # Returns 1
+print(add(1, **kwargs))  # Returns 1
