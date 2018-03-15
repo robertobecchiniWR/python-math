@@ -60,7 +60,7 @@ elif 1 == 0:  # Not mandatory
     print('Toujours pas')
 else:  # Not mandatory
     print("OK d'accord")
-    
+
 # For loop
 for i in range(5):
     print('i = {}'.format(i))
@@ -78,24 +78,34 @@ while i < 10:
         
 def add(a, b = 1):
     return a + b
-# add(0.5, 2) = add(0.5, b = 2) = 2.5
+# add(0.5, 2) = 2.5
 # add(1) = 2
 # add() -> ERROR
 
 
-def funcB(*args, **kwargs):
-    # args = list of argument = list
-    for elt in args:
-        print(elt)
-    # kwargs = list of keyword arguments = dict
-    for key in kwargs.keys():
-        print('{}-{}'.format(key, kwargs[key]))
-# Try: funcB(1, 2, 3, 5, b=10, c=45), funcB(1, 2, a=10, bb=45), ...
-# WARNING: funcB(1, 2, b=10, c=45, 5) => ERROR
+# No types
+# Parameters by default
+# Possibility of having a variable number of parameters
+    
+
+# %% Old Slide : Function definition
+        
+def funcA(a, b = 1):
+    return a + b
+
+print(funcA(1))  # Print 2, default value (1) used for b
+print(funcA(0.5, 2))  # Print 2.5, 2 is used for b
+print(funcA(0.5, b=2))  # Equivalent way to set b=2
+# funcA() -> ERROR : at least a must be given
 
 
-# Example of kwargs use
-kwargs = {'b': 12}
-print(add(1, **kwargs))  # Returns 13
-kwargs['b'] = 0
-print(add(1, **kwargs))  # Returns 1
+# Arguments can be passed as dictionnary for multi-argument functions like :
+def funcB(x, y, p1=None, p2=1, p3='o', p4=False):
+    return '{}, {} -- p1={}, p2={}, p3={}, p4={}'.format(x, y, p1, p2, p3, p4)
+
+
+# -- Arguments are only written once
+kwargs = {'p1': 12, 'p2': 2, 'p3': 'i', 'p4': True}
+print(funcB(1, 2, **kwargs))  # Print 1, 2 -- p1=12, p2=2, p3=i, p4=True
+print(funcB('a', 'b', **kwargs))  # Print a, b -- p1=12, p2=2, p3=i, p4=True
+
