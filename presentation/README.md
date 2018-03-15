@@ -18,9 +18,9 @@ Contains *.tex*, *.pdf*, etc ... files for the presentation of the PhD seminar.
     - [x] Dictionaries (AP)
     - [x] Conditional structures (AP)
     - [x] Function definition (AP)
-    - [ ] File I/O : reading and writing a file (from simple text, and examples of more complex tools ...) (AP)
-    - [ ] Using Numpy to manipulate arrays (AP)
-    - [ ] Overview of Scipy functionalities (AP)
+    - [x] File I/O : reading and writing a file (from simple text, and examples of more complex tools ...) (AP)
+    - [x] Using Numpy to manipulate arrays (AP)
+    - [x] Overview of Scipy functionalities (AP)
     - [ ] Data visualization with Matplotlib (AP)
     - [ ] Symbolic computation with Sympy (AP)
 

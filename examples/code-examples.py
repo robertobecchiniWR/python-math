@@ -88,6 +88,85 @@ def add(a, b = 1):
 # Possibility of having a variable number of parameters
     
 
+# %% Slide : File IO
+    
+infile = open("infile.dat", "r")
+# Opens the file for reading
+
+for line in infile:
+    print(line)
+# We can read each line as a string
+# If data is numerical, we can convert via float(line)
+
+infile.close()
+# Close file to release memory
+
+
+
+outfile = open("outfile.dat", "w")
+# Opens the file for writing
+
+s = 'Very important secret message'
+outfile.write(s + '\n')
+# We can write strings, writing '\n' creates a new line
+# If data is numerical, we can convert it via str(x)
+
+outfile.close()
+# Close file to release memory
+        
+
+# %% Slide : Numpy
+
+import numpy as np
+# Import the package
+
+v = np.array([1, 2, 3])
+# v is the 1-dimensional vector (1, 2, 3)
+# We can access and modify its elements via v[0], v[1], v[2]
+
+v.shape # returns (3,)
+
+
+A = np.array([[1, 2, 3], [4, 5, 6]])
+# A is the 2x3 matrix:
+# /1 2 3\
+# \4 5 6/
+# We can access and modify its elements via A[i, j]
+
+A.shape # returns (2, 3)
+
+B = np.reshape(A, (3,2))
+# B is the 3x2 matrix:
+# /1 2\
+# |3 4|
+# \5 6/
+
+
+# We can slice matrices:
+M = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
+
+M[1:2, 0:2]         # Matrix [5, 6]
+M[0:2]              # First two rows
+M[:, 1:3]           # Second and third columns
+
+
+# We already have some built-in matrices:
+np.zeros((3, 3))        # A 3x3 matrix filled with zeros
+np.ones((2, 1))         # A 2x1 matrix filled with ones
+np.full((2, 2), 27)     # A 2x2 matrix filled with 27
+np.eye(2)               # The identity matrix of dim 2
+
+
+# Useful operations:
+C = B.T         # Transpose
+A + C           # Elementwise sum
+A - C           # Elementwise difference
+A * C           # Elementwise product
+A / C           # Elementwise division
+np.dot(A, B)    # Matrix product
+# And lots of other built-in functions!
+
+
 # %% Old Slide : Function definition
         
 def funcA(a, b = 1):
