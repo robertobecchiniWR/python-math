@@ -1,6 +1,12 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+# Exercise 1: Lists - Solution
+#
+# Complete the filter_positive_oneliner function to achieve the same
+# functionality as filter_positive but only in one line, using list
+# comprehension.
+
 def filter_positive(numbers):
     positive_numbers = []
 
@@ -11,16 +17,13 @@ def filter_positive(numbers):
     return positive_numbers
 
 
-def filter_positive_2(numbers):
-    return [] # <- a list created using list comprehension
+def filter_positive_oneliner(numbers):
+    return [x for x in numbers if x > 0]
 
-
-###########################
 
 
 measurements = [-7.43, 11.09, -10.50, 6.62, -3.84, 9.98, -1.64, -7.16, 5.42, -31.48]
 
-positive_measurements = filter_positive(measurements)
-#positive_measurements = filter_positive_2(measurements)
+positive_measurements = filter_positive_oneliner(measurements)
 
 print(positive_measurements)
