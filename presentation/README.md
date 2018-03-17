@@ -17,12 +17,14 @@ Contains *.tex*, *.pdf*, etc ... files for the presentation of the PhD seminar.
     - [x] Lists (AP)
     - [x] Dictionaries (AP)
     - [x] Conditional structures (AP)
-    - [x] Function definition (AP)
+    - [ ] Function definition (AP)
     - [x] File I/O : reading and writing a file (from simple text, and examples of more complex tools ...) (AP)
+    - [ ] Numpy + Scipy introduction (TL)
     - [x] Using Numpy to manipulate arrays (AP)
     - [x] Overview of Scipy functionalities (AP)
     - [x] Data visualization with Matplotlib (AP)
-    - [x] Symbolic computation with Sympy (AP)
+    - [ ] Sympy introduction (TL)
+    - [ ] Symbolic computation with Sympy (AP)
 
 [MarkDown documentation](https://docs.gitlab.com/ee/user/markdown.html) - General synthax for *.md* files
 
