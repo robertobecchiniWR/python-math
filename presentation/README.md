@@ -22,7 +22,7 @@ Contains *.tex*, *.pdf*, etc ... files for the presentation of the PhD seminar.
     - [x] Using Numpy to manipulate arrays (AP)
     - [x] Overview of Scipy functionalities (AP)
     - [x] Data visualization with Matplotlib (AP)
-    - [ ] Symbolic computation with Sympy (AP)
+    - [x] Symbolic computation with Sympy (AP)
 
 [MarkDown documentation](https://docs.gitlab.com/ee/user/markdown.html) - General synthax for *.md* files
 

@@ -199,6 +199,45 @@ plt.show()
 
 
 
+# %% Slide: Sympy
+
+from sympy import *
+# Import package
+
+x = symbols('x')
+y = symbols('y')
+# Create symbolic variables
+
+a = x + y           # x + y
+b = a - x           # y
+c = expand(a**2)    # x**2 + 2*x*y + y**2
+d = factor(c)       # (x + y)**2
+
+init_printing(use_unicode = True)
+# Generates a nice human-readable output
+
+F = exp(x)*sin(x)
+
+f = diff(F, x)                     # exp(x)*sin(x) + exp(x)*cos(x)
+integrate(f, x)                    # exp(x)*sin(x)
+
+integrate(exp(-x), (x, -oo, oo))   # oo
+
+limit(sin(x)/x, x, 0)              # 1
+
+solve(x**2 + 2, x)                 # [-sqrt(2)i, sqrt(2)i]
+
+u = Function('u')
+t = symbols('t')
+
+lhs = diff(u(t), t, t) - u(t)
+rhs = exp(t)
+
+dsolve(Eq(lhs, rhs), u(t))         # u(t) = C2*exp(-t) + (C1 + t/2)*exp(t)
+
+
+latex(Integral(cos(x)**2, (x, 0, pi)))  # LaTeX code!
+
 # %% Old Slide : Function definition
         
 def funcA(a, b = 1):
