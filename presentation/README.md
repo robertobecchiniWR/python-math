@@ -6,9 +6,9 @@ Contains *.tex*, *.pdf*, etc ... files for the presentation of the PhD seminar.
 
 - [ ] 20 min presentation (slides breakdown)
     - [x] How to get Python (TL)
-    - [ ] History (TL)
+    - [x] What are we talking about (TL)
+    - [x] Functioning principles (TL)
     - [x] Python vs. Others (TL: Aitor, je te corriger des choses si tu le sens)
-    - [ ] Functioning principles (TL)
     - [x] Practical tools (TL)
 
 - [ ] 30 min hands-on examples
@@ -17,14 +17,16 @@ Contains *.tex*, *.pdf*, etc ... files for the presentation of the PhD seminar.
     - [x] Lists (AP)
     - [x] Dictionaries (AP)
     - [x] Conditional structures (AP)
-    - [ ] Function definition (AP)
+    - [x] Function definition (AP)
     - [x] File I/O : reading and writing a file (from simple text, and examples of more complex tools ...) (AP)
-    - [ ] Numpy + Scipy introduction (TL)
-    - [x] Using Numpy to manipulate arrays (AP)
-    - [x] Overview of Scipy functionalities (AP)
+    - [x] Numpy + Scipy introduction (TL)
+    - [x] Numpy Basics I (AP)
+    - [x] Numpy Basics II (AP)
+    - [x] To go further with Numpy and Scipy (TL)
     - [x] Data visualization with Matplotlib (AP)
-    - [ ] Sympy introduction (TL)
-    - [ ] Symbolic computation with Sympy (AP)
+    - [x] Sympy, more than just another py-word game (TL)
+    - [x] To go further withSympy (TL)
+    - [x] Conclusion (TL)
 
 [MarkDown documentation](https://docs.gitlab.com/ee/user/markdown.html) - General synthax for *.md* files
 

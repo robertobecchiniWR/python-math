@@ -63,17 +63,63 @@
         \end{enumerate}
     \end{frame}
     
-	\begin{frame}{History}
-		XXX
+	\begin{frame}{What are we talking about}
+        \begin{block}{A little history}
+            \begin{itemize}
+            \item Programming language conceived by a Monty Python fan in the 80's
+            \item First released in 1991, then
+            \begin{itemize}
+                \item Python 2 in 2000 (community backed development, support $\rightarrow$ 2020)
+                \item Python 3 in 2008 (major revision)
+            \end{itemize}
+            \end{itemize}
+            Current versions (2.7, 3.6) are not entirely compatible, 
+            but very close
+        \end{block}
+        
+        \begin{block}{Main motivations}
+            Developers wanted to create a language that would be
+            
+            \vspace{-10pt}
+            \begin{itemize}
+                \item general purpose (they really got that !)
+                \item highly extensible and modular (dynamic language)
+                \item beautiful, simple, \textbf{easily readable}
+               \end{itemize} 
+        \end{block}
+        
+        \vspace*{-20pt}
 	\end{frame}
+    
+	\begin{frame}{Functioning principles}
+        \begin{block}{Pre-compilation of code files}
+            \centering
+            \includegraphics[width=0.8\linewidth]{cpython}
+            
+            \vspace*{-20pt}   
+            \begin{itemize}
+                \item Allows partial code optimization
+                \item Totally transparent to user
+                \item Portability on every architecture
+            \end{itemize}
+        \end{block}
+        Python core (Virtual Machine) is written in C:
+        
+        \vspace*{-5pt}
+        \begin{itemize}
+            \item Easy interface with other compiled languages (C/C++, Fortran)
+            \item Same speed for read/write files as C
+        \end{itemize}
+        
+        \vspace*{-20pt}
+    \end{frame}
 
 	\begin{frame}{Python vs. Others (Matlab, Fortran, C/C++, ...)}
         \begin{itemize}
             \item License-free and open-source ($\neq$ Matlab)
             \item Huge users community, many (free) packages for many applications
             \item Extremely easy of use for non-I-love-programming people \\ ($\neq$ Fortran, C/C++)
-            \item Easy interface with other (more-efficient) programming languages \\
-            $\Rightarrow$ computation can be accelerated using Fortran or C/C++
+            \item Computation can be accelerated using Fortran or C/C++
             library ... 
             \item Can scale to very large problems (parallel computing, ...)
             \item Structured and friendly ways for developing library ($\neq$ Matlab)
@@ -93,11 +139,6 @@
             Python = many advantages, with very few drawbacks !
         \end{center}
 	\end{frame}
-    
-	\begin{frame}{Functioning principles}
-        XXX
-    \end{frame}
-
 
 	\begin{frame}{Practical tools}
         \vspace{5pt}
@@ -176,7 +217,7 @@
 \begin{frame}{Basic variables types and operations}
 %    \pythonCode
     Slide codes at: 
-    \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/code-examples}{python-math/examples/code\-examples.py}
+    \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/code-examples}{python-math/examples/code-examples.py}
     
     \vspace*{5pt}
     \includegraphics[width=0.9\linewidth]{code-basic-variables}
@@ -267,26 +308,65 @@
 \end{frame}
 
 
-\begin{frame}{Numpy and Scipy introduction}
-	XXX
+\begin{frame}{Numpy and Scipy, what for ?}
+	\begin{center}
+        Loops in python are (REALLY) slow\\
+        $\Rightarrow$ do algebraic computation in C (or Fortran)
+    \end{center}
+    \begin{block}{Numpy : interface for array manipulation}
+        \begin{itemize}
+            \item Data are stored in contiguous memory location
+            \item Operations on arrays are done in C
+            \item Rely on BLAS implementation for algebraic computation
+        \end{itemize}
+    \end{block}
+    \begin{block}{Scipy : companion package for scientific computing}
+        \begin{itemize}
+            \item Many functions for linear algebra, optimization, interpolation, fft...
+            \item Interface with C and Fortran optimized routine\\
+            (LAPACK, FFTW, QUADPACK, ... and many others !)
+        \end{itemize}
+    \end{block}
 \end{frame}
 
-\begin{frame}{Numpy I}
+\begin{frame}{Numpy basics I}
 \includegraphics[width=0.9\linewidth]{code-numpy1}
 \end{frame}
 
 
-\begin{frame}{Numpy II}
+\begin{frame}{Numpy basics II}
 	\includegraphics[width=0.8\linewidth]{code-numpy2}
 \end{frame}
 
 
-\begin{frame}{Scipy}
-    \includegraphics[width=0.9\linewidth]{code-scipy}
+\begin{frame}{To go further with Numpy and Scipy}
+    % \includegraphics[width=0.9\linewidth]{code-scipy}
+    \small
+    \vspace{5pt}
+    \begin{block}{Numpy examples :}
+    \begin{itemize}
+        \item Call Fortran routines to accelerate computations
+        \item Easily read and write files with single line coding
+    \end{itemize}
+    \end{block}
+    \vspace*{-7pt}
+    ... and more in    
+    \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/numpy}{python-math/examples/numpy} directory
+    \vspace*{6pt}
+    \begin{block}{Scipy examples :}
+        \begin{itemize}
+        \item Data regression using least square minimization
+        \item Eigenvalue computation of the tri-dimensional advection operator
+    \end{itemize}
+    \end{block}
+    \vspace*{-7pt}
+    ... and more in    
+    \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/scipy}{python-math/examples/scipy} directory \\
+    See also \href{https://docs.scipy.org/doc/scipy/reference/tutorial/}{Scipy tutorials} on the Internet
 \end{frame}
 
 
-\begin{frame}{Matplotlib I}
+\begin{frame}{Data visualization with Matplotlib I}
     \includegraphics[width=0.8\linewidth]{code-matplotlib1}
     
 	\centering    \includegraphics[width=0.4\linewidth]{plot1}
@@ -296,15 +376,57 @@
 	\includegraphics[width=0.9\linewidth]{code-matplotlib2}
 	
 	\centering    \includegraphics[width=0.4\linewidth]{plot2}
+    
+    ... and more in    
+    \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/matplotlib}{python-math/examples/matplotlib} directory
 \end{frame}
 
 
-\begin{frame}{Sympy introduction}
-    XXX
+\begin{frame}{Sympy, more than just another py-word game}
+    If you are interested in
+    \begin{itemize}
+        \item Sparing few neurons by not doing computation by hand
+        \item Verifying some solutions you will give to students
+        \item Obtaining a direct latex translation of some ugly formula 
+    \end{itemize}
+    \begin{center}
+        Sympy can help you !
+    \end{center}
+    \begin{itemize}
+        \item Symbolic optimized computation core in python
+        \item Can combine numerical calculation with Numpy
+        \item Allow some nice output form within Spyder
+    \end{itemize}
 \end{frame}
 
-\begin{frame}{Sympy}
-	XXX
+\begin{frame}{To go further with Sympy}
+	\begin{block}{Scipy examples :}
+        \begin{itemize}
+            \item Block matrix computation with non-commutative elements
+            \item Compute interpolation formula for non-structured grid
+            \item Latex translation of symbolic formula
+        \end{itemize}
+    \end{block}
+    \vspace*{-7pt}
+    ... and more in    
+    \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/sympy}{python-math/examples/sympy} directory \\
+    See also \href{http://docs.sympy.org/latest/tutorial/index.html}{Sympy Tutorials} on the Internet
+\end{frame}
+
+\begin{frame}{Conclusion}
+    Here was just presented a tiny part of python application for researchers\\
+    $\Rightarrow$ many other nice things are also possible
+    \begin{itemize}
+        \item Writing code documentation, and include math formula
+        \item Create and organize packages for particular applications
+        \item Benefit from the object-oriented programming to facilitate modularity and code development
+    \end{itemize}
+    Do not hesitate to look at \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples}{python-math/examples} for other advanced examples ...
+    \begin{center}
+        \bfseries
+        Thanks for watching ! \\
+        ... we hope you enjoy at least some parts ...
+    \end{center}
 \end{frame}
 
 \end{document}

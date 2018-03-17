@@ -34,8 +34,15 @@ nl = [['vive', 'la'], ['saucisse', 2], 'Toulouse']
 # Access sublist element : nl[0] = ['vive', 'la']
 # Access final element : nl[0][1] = 'la', nl[1][0] = 'saucisse'
 
+# List definition
+l1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+# -- equivalent (shorter) formulation
+l1 = [i for i in range(10)]
+
+# List operation
+l11 = [i + 1 for i in l1]
+
 # List comprehension
-l1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 l2 = [3 * n + 1 for n in l1 if n % 2 == 0]
 # l2 = [7, 13, 19, 25, 31]
 # %% Slide: Dictionaries
@@ -75,21 +82,33 @@ while i < 10:
 
 
 # %% Slide: Function definition
-        
-def add(a, b = 1):
+
+def add(a, b=1): # NO NEED to define the type, b has a default value
     return a + b
 # add(0.5, 2) = 2.5
 # add(1) = 2
 # add() -> ERROR
 
 
-# No types
-# Parameters by default
-# Possibility of having a variable number of parameters
-    
+# Possibility of having a variable number of parameters and outputs
+def doSomething(x, y, z, p1=1, p3='red'):
+    return p1*(x+y), p3+str(z)  # returns a list of two elements
+
+out = doSomething(1, 2, 3)  # out[0] = 3, out[1] = 'red3'
+# -- shorter equivalent way
+value, flag = doSomething(1, 2, 3)  # value = 3, flag = 'red3'
+
+
+# General form of a function (cf. function plot of matplotlib)
+def myFuncThatDoThings(*args, **kwargs):
+    pass
+# args is a list, with non keyword argument (ex: a in add)
+# kwargs is a dictionnary, with keywords arguments (ex: b=1 in add)
+# * and ** are just a notation to 'unpack' list and dictionnary
+# keywords arguments ALWAYS at the end (ex: add(b=1, a) -> ERROR)
 
 # %% Slide: File IO
-    
+
 infile = open("infile.dat", "r")
 # Opens the file for reading
 
@@ -113,7 +132,7 @@ outfile.write(s + '\n')
 
 outfile.close()
 # Close file to release memory
-        
+
 
 # %% Slide: Numpy
 
@@ -148,6 +167,8 @@ M = np.array([[1,2,3,4], [5,6,7,8], [9,10,11,12]])
 M[1:2, 0:2]         # Matrix [5, 6]
 M[0:2]              # First two rows
 M[:, 1:3]           # Second and third columns
+M[-1, :]            # Last line
+# INDEX STARTS AT 0 !!!
 
 
 # We already have some built-in matrices:
@@ -201,19 +222,19 @@ plt.show()
 
 # %% Slide: Sympy
 
-from sympy import *
+import sympy as sy
 # Import package
 
-x = symbols('x')
-y = symbols('y')
+x = sy.symbols('x')
+y = sy.symbols('y')
 # Create symbolic variables
 
 a = x + y           # x + y
 b = a - x           # y
-c = expand(a**2)    # x**2 + 2*x*y + y**2
-d = factor(c)       # (x + y)**2
+c = sy.expand(a**2)    # x**2 + 2*x*y + y**2
+d = sy.factor(c)       # (x + y)**2
 
-init_printing(use_unicode = True)
+sy.init_printing(use_unicode = True)
 # Generates a nice human-readable output
 
 F = exp(x)*sin(x)
@@ -239,7 +260,7 @@ dsolve(Eq(lhs, rhs), u(t))         # u(t) = C2*exp(-t) + (C1 + t/2)*exp(t)
 latex(Integral(cos(x)**2, (x, 0, pi)))  # LaTeX code!
 
 # %% Old Slide : Function definition
-        
+
 def funcA(a, b = 1):
     return a + b
 
