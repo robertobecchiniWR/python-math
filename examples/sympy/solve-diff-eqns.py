@@ -1,12 +1,13 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Sympy example: How to solve a differential equation using sympy 
+Sympy example: How to solve a differential equation using sympy
 
 @author: a.perez
 """
 
 import sympy as sy
+sy.init_printing()
 
 # Define a generic function u and its variable, t
 u = sy.Function('u')
@@ -25,7 +26,7 @@ eq = sy.Eq(lhs, rhs)        # We create the equation
 
 sol = sy.dsolve(eq, u(t))   # And we solve it using the function dsolve,
                             # wrt the function u(t)
-                            
-                            
+
+
 # Now sol is the equation:
 #   u(t) = C2*exp(-t) + (C1 + t/2)*exp(t)

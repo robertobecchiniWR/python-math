@@ -12,8 +12,9 @@ in the [data.txt](data.txt) file, modify those and write the modified data into 
 ## [callFortranRoutine.py](callFortranRoutine.py)
 
 Perform the [Rutishauser-Kahan-Pal-Walker algorithm](https://link.springer.com/content/pdf/10.1007/BF01405565.pdf) to transform an arrow matrix (with non-zero elements
-in the first row and column, and diagonal) into a symmetric trifdiagonal matrix.
-It uses the [f2py](https://www.numfys.net/howto/F2PY/) sub-module of numpy to compile a fortran subroutine that can be called in python. 
+in the first row and column, and diagonal) into a symmetric tridiagonal matrix.
+It uses the [f2py](https://www.numfys.net/howto/F2PY/) sub-module of numpy to compile a fortran subroutine (written in [libfor.f95](libfor.f95)) 
+that can be called in python. 
 
 
 ## [csv-read-interpol-plot.py](csv-read-interpol-plot.py)

@@ -25,5 +25,9 @@ Contains scripts that use numpy python package for specific applications
 
 Contains scripts that use scipy python package for specific applications
 
+## [sympy](sympy/)
+
+Contains scripts that use sympy python package for symbolic computation
+
 [MarkDown documentation](https://docs.gitlab.com/ee/user/markdown.html) - General synthax for *.md* files
 

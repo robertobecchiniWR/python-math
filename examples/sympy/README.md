@@ -7,4 +7,9 @@ Also, you can look at an [extended list of Sympy Tutorials](http://docs.sympy.or
 
 This script is a basic example of how to solve a differential equation using sympy.
 
-In particular, the equation u''(t) - u(t) = exp(t) is solved, using the sympy function dsolve [minimize](http://docs.sympy.org/latest/modules/solvers/ode.html).
+In particular, the equation u''(t) - u(t) = exp(t) is solved, using the sympy function [dsolve](http://docs.sympy.org/latest/modules/solvers/ode.html).
+
+## [generalMidPointInterpolation.py](generalMidPointInterpolation.py)
+
+This script compute the general formula of mid-point interpolation on one-dimensionnal uniform grids.
+The interpolation can be computed for any order (1, 3, 5, ... always an odd number) 
