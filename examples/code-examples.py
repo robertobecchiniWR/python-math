@@ -141,6 +141,7 @@ import numpy as np
 v = np.array([1, 2, 3])
 # v is the 1-dimensional vector (1, 2, 3)
 # We can access and modify its elements via v[0], v[1], v[2]
+# INDEX STARTS AT 0 !!!
 
 v.shape # returns (3,)
 
@@ -167,7 +168,6 @@ M[1:2, 0:2]         # Matrix [5, 6]
 M[0:2]              # First two rows
 M[:, 1:3]           # Second and third columns
 M[-1, :]            # Last line
-# INDEX STARTS AT 0 !!!
 
 
 # We already have some built-in matrices:
