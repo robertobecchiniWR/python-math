@@ -20,6 +20,10 @@ into the tridiagonal matrix
 [                            sqrt(b{n-1})   a{n-1} ]
 
 using givens rotations.
+
+
+NOTE: This example assumes that your OS has some Fortran compiler installed.
+      You can download one at [https://gcc.gnu.org/wiki/GFortranBinaries].
 """
 import os
 import subprocess
