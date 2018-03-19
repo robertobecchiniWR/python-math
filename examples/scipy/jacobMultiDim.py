@@ -28,7 +28,7 @@ schemeY = 'U1'
 schemeZ = 'U1'
 
 # Script actions
-plotMatrix = False
+plotMatrix = True
 saveFig = False
 
 # Initial velocity fields
@@ -170,6 +170,7 @@ def computeJacobian(u, rhs):
         jacobian[:, i] /= eps
         uPerturb[i] = u[i]
     return jacobian
+
 
 # Compute the Jacobie matrix of each RHS function
 print('Compute 1D Jacobi matrix')

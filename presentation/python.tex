@@ -37,31 +37,6 @@
 
 \begin{document}
 	\maketitle
-	
-   	\begin{frame}{How to get Python (+ useful packages ...)}
-        We are going to use the \textbf{miniconda} installer, which is cross-platform and provides package management, together with the \textbf{spyder} IDE.
-        
-        \begin{enumerate}
-            \item Go to \href{https://conda.io/miniconda.html}{https://conda.io/miniconda.html} \\ (or Google search : "miniconda download")
-            \item Depending on the operating system, download installer (Python 2.7)
-            \item Install Python and required packages
-            \begin{itemize}
-                \item Mac OS X or Unix:
-                \begin{enumerate}
-                    \item Open a terminal
-                    \item Run "bash Miniconda[...].sh", and yes for all ...
-                    \item Open a new terminal, or run "source $\sim$/.bashrc"
-                    \item Run "\textbf{conda install spyder numpy scipy matplotlib sympy}"
-                \end{enumerate}
-                \item Windows:
-                \begin{enumerate}
-                    \item Double-click on the .exe file, and yes for all ...
-                    \item Open "conda prompt" terminal (installed with miniconda)
-                    \item Run "\textbf{conda install spyder numpy scipy matplotlib sympy}"
-                \end{enumerate}
-            \end{itemize}
-        \end{enumerate}
-    \end{frame}
     
 	\begin{frame}{What are we talking about}
         \begin{block}{A little history}
@@ -157,35 +132,6 @@
         \end{center}
         \vspace{-10pt}
 	\end{frame}
-    
-	\begin{frame}{Hello World!}
-        \begin{center}
-            All the examples and python files are available at: \\
-            \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math}{https://gitlab.unige.ch/Thibaut.Lunet/python-math}
-        \end{center}
-        
-        \begin{block}{A first easy step ...}
-            \begin{enumerate}
-                \item Launch Spyder
-                \begin{itemize}
-                    \item Windows : double click on an icon somewhere ...
-                    \item Mac OS X or Unix : run "spyder" in terminal
-                \end{itemize}
-                \item Discover a wonderful environment \#woaaah
-                \item Go to lower right corner $\rightarrow$ IPython console
-                \begin{itemize}
-                    \item write "1+1"
-                    \item press enter ...
-                \end{itemize}
-                \item Go to text editor (middle)
-                \begin{itemize}
-                    \item write "print('hello world')
-                    \item save and run the file ...
-                \end{itemize}
-            \end{enumerate}
-        \end{block}
-        
-    \end{frame}
     
     
 %\defverbatim[colored]\pythonCode{
@@ -317,16 +263,18 @@
         \begin{itemize}
             \item Data are stored in contiguous memory location
             \item Operations on arrays are done in C
-            \item Rely on BLAS implementation for algebraic computation
+            \item Uses optimized C library for algebraic computation (BLAS)
         \end{itemize}
-    \end{block}
+    \end{block}See also \href{https://docs.scipy.org/doc/scipy/reference/tutorial/}{Scipy tutorials} on the Internet
     \begin{block}{Scipy : companion package for scientific computing}
         \begin{itemize}
-            \item Many functions for linear algebra, optimization, interpolation, fft...
+            \item Many functions for linear algebra, optimization, interpolation, ...
             \item Interface with C and Fortran optimized routine\\
             (LAPACK, FFTW, QUADPACK, ... and many others !)
         \end{itemize}
     \end{block}
+    \vspace*{-10pt}
+    See also \href{https://docs.scipy.org/doc/scipy/reference/tutorial/}{Scipy tutorials} on the Internet
 \end{frame}
 
 \begin{frame}{Numpy basics I}
@@ -362,7 +310,6 @@
     \vspace*{-7pt}
     ... and more in    
     \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math/tree/master/examples/scipy}{python-math/examples/scipy} directory \\
-    See also \href{https://docs.scipy.org/doc/scipy/reference/tutorial/}{Scipy tutorials} on the Internet
 \end{frame}
 
 
@@ -426,7 +373,62 @@
         \bfseries
         Thanks for watching ! \\
         ... we hope you enjoy at least some parts ...
+        \\ Now you can play with !
     \end{center}
 \end{frame}
+
+   	\begin{frame}{How to get Python (+ useful packages ...)}
+           We are going to use the \textbf{miniconda} installer, which is cross-platform and provides package management, together with the \textbf{spyder} IDE.
+           
+           \begin{enumerate}
+               \item Go to \href{https://conda.io/miniconda.html}{https://conda.io/miniconda.html} \\ (or Google search : "miniconda download")
+               \item Depending on the operating system, download installer (Python 2.7)
+               \item Install Python and required packages
+               \begin{itemize}
+                   \item Mac OS X or Unix:
+                   \begin{enumerate}
+                       \item Open a terminal
+                       \item Run "bash Miniconda[...].sh", and yes for all ...
+                       \item Open a new terminal, or run "source $\sim$/.bashrc"
+                       \item Run "\textbf{conda install spyder numpy scipy matplotlib sympy}"
+                    \end{enumerate}
+                    \item Windows:
+                    \begin{enumerate}
+                        \item Double-click on the .exe file, and yes for all ...
+                        \item Open "conda prompt" terminal (installed with miniconda)
+                        \item Run "\textbf{conda install spyder numpy scipy matplotlib sympy}"
+                    \end{enumerate}
+                \end{itemize}
+            \end{enumerate}
+        \end{frame}
+        
+        \begin{frame}{Hello World!}
+            \begin{center}
+                All the examples and python files are available at: \\
+                \href{https://gitlab.unige.ch/Thibaut.Lunet/python-math}{https://gitlab.unige.ch/Thibaut.Lunet/python-math}
+            \end{center}
+            
+            \begin{block}{A first easy step ...}
+                \begin{enumerate}
+                    \item Launch Spyder
+                    \begin{itemize}
+                        \item Windows : double click on an icon somewhere ...
+                        \item Mac OS X or Unix : run "spyder" in terminal
+                    \end{itemize}
+                    \item Discover a wonderful environment \#woaaah
+                    \item Go to lower right corner $\rightarrow$ IPython console
+                    \begin{itemize}
+                        \item write "1+1"
+                        \item press enter ...
+                    \end{itemize}
+                    \item Go to text editor (middle)
+                    \begin{itemize}
+                        \item write "print('hello world')
+                        \item save and run the file ...
+                    \end{itemize}
+                \end{enumerate}
+            \end{block}
+            
+        \end{frame}
 
 \end{document}

@@ -34,16 +34,10 @@ nl = [['vive', 'la'], ['saucisse', 2], 'Toulouse']
 # Access sublist element : nl[0] = ['vive', 'la']
 # Access final element : nl[0][1] = 'la', nl[1][0] = 'saucisse'
 
-# List definition
-l1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-# -- equivalent (shorter) formulation
-l1 = [i for i in range(10)]
-
-# List operation
-l11 = [i + 1 for i in l1]
-
 # List comprehension
-l2 = [3 * n + 1 for n in l1 if n % 2 == 0]
+l1 = [i**2 for i in range(10)] 
+# l1 = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+l2 = [3*n + 1 for n in range(10) if n % 2 == 0]
 # l2 = [7, 13, 19, 25, 31]
 # %% Slide: Dictionaries
 
@@ -92,7 +86,9 @@ def add(a, b=1): # NO NEED to define the type, b has a default value
 
 # Possibility of having a variable number of parameters and outputs
 def doSomething(x, y, z, p1=1, p3='red'):
-    return p1*(x+y), p3+str(z)  # returns a list of two elements
+    out1 = p1*(x+y)
+    out2 = p3+str(z)
+    return out1, out2  # returns a list of two elements
 
 out = doSomething(1, 2, 3)  # out[0] = 3, out[1] = 'red3'
 # -- shorter equivalent way
@@ -218,6 +214,14 @@ plt.title('Cosine')
 
 plt.show()
 
+if 1 == 2 \
+  or 1 == 3 \
+  or 's'.startswith('s') \
+  and 's'.startswith('s') \
+  and 's'.startswith('s') \
+  and 's'.startswith('s'):
+    pass
+    pass
 
 
 # %% Slide: Sympy
