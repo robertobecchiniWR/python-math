@@ -186,13 +186,13 @@ A / C           # Elementwise division
 np.dot(A, B)    # Matrix product
 # And lots of other built-in functions!
 
-# %% Slide: Matplotlib
+# %% Slide: Matplotlib I
 
 import numpy as np
 import matplotlib.pyplot as plt
 # Import the packages
 
-x = np.arange(0, 3 * np.pi, 0.1)
+x = np.linspace(0, 3*np.pi, num=100)
 sinx = np.sin(x)
 cosx = np.cos(x)
 # We generate the data we want to visualize
@@ -205,6 +205,17 @@ plt.title('Sine and Cosine')        # Adds a title
 plt.legend(['sin(x)', 'cos(x)'])    # Adds a legend
 plt.show()                          # Actually shows the plot
 
+
+# %% Slide: Matplotlib II
+
+import numpy as np
+import matplotlib.pyplot as plt
+# Import the packages
+
+x = np.linspace(0, 3*np.pi, num=100)
+sinx = np.sin(x)
+cosx = np.cos(x)
+# We generate the data we want to visualize
 
 # We can also display several plots at once:
 plt.subplot(2, 1, 1)        # 2x1 grid, select the first as active
