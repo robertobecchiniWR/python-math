@@ -17,4 +17,4 @@ f(u) = c_x \frac{\partial u}{\partial x}
 ```
 
 It compute it in 1D, 2D, 3D, and extract the eigenvalues for each cases.
-in particular, it uses the [eigvals](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eigvals.html) of the scipy package.
+In particular, it uses the [eigvals](https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eigvals.html) of the scipy package.

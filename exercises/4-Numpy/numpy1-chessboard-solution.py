@@ -3,7 +3,8 @@
 
 # Exercise 4.1: Numpy chessboard - Solution
 #
-# Create a 8x8 matrix with a chessboard pattern with numbers 1 and 0.
+# Create a 8x8 matrix with a chessboard pattern with numbers 1 and 0,
+# then visualize it with the function imshow from matplotlib.
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -19,5 +20,4 @@ def chessboard():
 
 
 M = chessboard()
-print(M)
 plt.imshow(M, cmap='binary')
