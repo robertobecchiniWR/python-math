@@ -214,15 +214,6 @@ plt.title('Cosine')
 
 plt.show()
 
-if 1 == 2 \
-  or 1 == 3 \
-  or 's'.startswith('s') \
-  and 's'.startswith('s') \
-  and 's'.startswith('s') \
-  and 's'.startswith('s'):
-    pass
-    pass
-
 
 # %% Slide: Sympy
 
@@ -233,54 +224,31 @@ x = sy.symbols('x')
 y = sy.symbols('y')
 # Create symbolic variables
 
-a = x + y           # x + y
-b = a - x           # y
+a = x + y              # x + y
+b = a - x              # y
 c = sy.expand(a**2)    # x**2 + 2*x*y + y**2
 d = sy.factor(c)       # (x + y)**2
 
 sy.init_printing(use_unicode = True)
 # Generates a nice human-readable output
 
-F = exp(x)*sin(x)
+F = sy.exp(x)*sy.sin(x)
 
-f = diff(F, x)                     # exp(x)*sin(x) + exp(x)*cos(x)
-integrate(f, x)                    # exp(x)*sin(x)
+f = sy.diff(F, x)      # exp(x)*sin(x) + exp(x)*cos(x)
+sy.integrate(f, x)     # exp(x)*sin(x)
 
-integrate(exp(-x), (x, -oo, oo))   # oo
+sy.integrate(sy.exp(-x), (x, -sy.oo, sy.oo))   # oo
+sy.limit(sy.sin(x)/x, x, 0)                    # 1
 
-limit(sin(x)/x, x, 0)              # 1
+sy.solve(x**2 + 2, x)                 # [-sqrt(2)i, sqrt(2)i]
 
-solve(x**2 + 2, x)                 # [-sqrt(2)i, sqrt(2)i]
+u = sy.Function('u')
+t = sy.symbols('t')
 
-u = Function('u')
-t = symbols('t')
+lhs = sy.diff(u(t), t, t) - u(t)
+rhs = sy.exp(t)
 
-lhs = diff(u(t), t, t) - u(t)
-rhs = exp(t)
-
-dsolve(Eq(lhs, rhs), u(t))         # u(t) = C2*exp(-t) + (C1 + t/2)*exp(t)
-
-
-latex(Integral(cos(x)**2, (x, 0, pi)))  # LaTeX code!
-
-# %% Old Slide : Function definition
-
-def funcA(a, b = 1):
-    return a + b
-
-print(funcA(1))  # Print 2, default value (1) used for b
-print(funcA(0.5, 2))  # Print 2.5, 2 is used for b
-print(funcA(0.5, b=2))  # Equivalent way to set b=2
-# funcA() -> ERROR : at least a must be given
+sy.dsolve(sy.Eq(lhs, rhs), u(t))         # u(t) = C2*exp(-t) + (C1 + t/2)*exp(t)
 
 
-# Arguments can be passed as dictionnary for multi-argument functions like :
-def funcB(x, y, p1=None, p2=1, p3='o', p4=False):
-    return '{}, {} -- p1={}, p2={}, p3={}, p4={}'.format(x, y, p1, p2, p3, p4)
-
-
-# -- Arguments are only written once
-kwargs = {'p1': 12, 'p2': 2, 'p3': 'i', 'p4': True}
-print(funcB(1, 2, **kwargs))  # Print 1, 2 -- p1=12, p2=2, p3=i, p4=True
-print(funcB('a', 'b', **kwargs))  # Print a, b -- p1=12, p2=2, p3=i, p4=True
-
+sy.latex(sy.Integral(sy.cos(x)**2, (x, 0, sy.pi)))  # LaTeX code!

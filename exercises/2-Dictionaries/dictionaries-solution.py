@@ -17,10 +17,13 @@ def is_nice(figure):
     if figure['name'] == 'circle' and 2*figure['radius'] <= 3:
         return True
     
-    if figure['name'] == 'square' and (figure['color'] == 'yellow' or figure['side']**2 >= 7):
+    if figure['name'] == 'square' \
+      and (figure['color'] == 'yellow' or figure['side']**2 >= 7):
         return True
     
-    if figure['name'] == 'rectangle' and (figure['color'] == 'yellow' or figure['sides'][0]*figure['sides'][1] >= 7):
+    if figure['name'] == 'rectangle' \
+      and (figure['color'] == 'yellow' \
+           or figure['sides'][0]*figure['sides'][1] >= 7):
         return True
     
     return False
