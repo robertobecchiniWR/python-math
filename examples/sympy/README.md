@@ -9,6 +9,10 @@ This script is a basic example of how to solve a differential equation using sym
 
 In particular, the equation u''(t) - u(t) = exp(t) is solved, using the sympy function [dsolve](http://docs.sympy.org/latest/modules/solvers/ode.html).
 
+## [blockMatrixComputation.py](blockMatrixComputation.py)
+
+Performs block matrix computation with non-comuutative blocks, and print latex output for the results
+
 ## [generalMidPointInterpolation.py](generalMidPointInterpolation.py)
 
 This script compute the general formula of mid-point interpolation on one-dimensionnal uniform grids.

@@ -1,9 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Wed Oct 19 18:54:50 2016
-
-@author: t.lunet
+Compute the analytical mid-point interpolation formula, for any order,
+on uniform 1D grids
 """
 import sympy as sy
 from time import time
