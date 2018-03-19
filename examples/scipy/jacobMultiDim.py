@@ -1,9 +1,8 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 """
-Created on Tue May 23 13:29:54 2017
-
-@author: t.lunet
+Compute the eigenvalues of the 1D, 2D and 3D advection operator when a finite
+difference scheme is used to compute the space derivative
 """
 import numpy as np
 import scipy.linalg as spl
@@ -36,7 +35,7 @@ u01D = np.ones(nX)
 u02D = np.ones((nX, nY)).ravel()
 u03D = np.ones((nX, nY, nZ)).ravel()
 
-# Stencils
+# Stencils form definition
 stencilU1 = [-1, 1, 0]
 stencilC2 = [-0.5, 0, 0.5]
 stencilU3 = [1./6, -6./6, 3./6, 2./6, 0]
@@ -45,6 +44,7 @@ dicoStencil = {'U1': ['$1^{st}$ order Upwind', stencilU1],
                'C2': ['$2^{nd}$ order Centered', stencilC2],
                'U3': ['$3^{rd}$ order Upwind', stencilU3]}
 
+# Set stencils
 stencilXName = dicoStencil[schemeX][0]
 stencilYName = dicoStencil[schemeY][0]
 stencilZName = dicoStencil[schemeZ][0]
@@ -64,6 +64,28 @@ def rhs1D(u):
 
     .. math::
         f(u) = c_x \\frac{\\partial u}{\\partial x}
+
+    The space derivative is approximated by a finite difference scheme,
+    set depending on the value for the variable **schemeX** above in the
+    script :
+
+        - schemeX='U1': :math:`1^{st}` order upwind,
+
+          .. math::
+              \\frac{\\partial u_i}{\\partial x} \\simeq
+              \\frac{u_{i}-u_{i-1}}{\\Delta_x}
+
+        - schemeX='C2': :math:`2^{nd}` order centered,
+
+          .. math::
+              \\frac{\\partial u_i}{\\partial x} \\simeq
+              \\frac{u_{i+1}-u_{i-1}}{2\\Delta_x}
+
+        - schemeX='U3': :math:`3^{rd}` order upwind,
+
+          .. math::
+              \\frac{\\partial u_i}{\\partial x} \\simeq
+              \\frac{2u_{i+1}+3u_{i}-6u_{i-1}+u_{i-2}}{6\\Delta_x}
 
     Parameter
     ---------
@@ -91,6 +113,8 @@ def rhs2D(u):
     .. math::
         f(u) = c_x \\frac{\\partial u}{\\partial x} +
         c_y \\frac{\\partial u}{\\partial y}
+
+    See rhs1D for description of the space discretization
 
     Parameter
     ---------
@@ -122,6 +146,8 @@ def rhs3D(u):
         f(u) = c_x \\frac{\\partial u}{\\partial x} +
         c_y \\frac{\\partial u}{\\partial y} +
         c_z \\frac{\\partial u}{\\partial z}
+
+    See rhs1D for description of the space discretization
 
     Parameter
     ---------
