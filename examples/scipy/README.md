@@ -13,7 +13,7 @@ In particular, it uses the [minimize](https://docs.scipy.org/doc/scipy/reference
 This script focus on the Jacobi matrix of the advection operator:
 
 ```math
-f(u) = c_x \frac{\partial u}\frac{\partial x}
+f(u) = c_x \frac{\partial u}{\partial x}
 ```
 
 It compute it in 1D, 2D, 3D, and extract the eigenvalues for each cases.
