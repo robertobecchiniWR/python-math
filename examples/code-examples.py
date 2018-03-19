@@ -29,22 +29,28 @@ l = [1, 2, 5, 6]
 # Access elements : l[0] = 1, l[2] = 5, l[-1] = 6
 # Slice : l[1:3] = [2, 5]
 
+
 # Nested list
 nl = [['vive', 'la'], ['saucisse', 2], 'Toulouse']
 # Access sublist element : nl[0] = ['vive', 'la']
 # Access final element : nl[0][1] = 'la', nl[1][0] = 'saucisse'
+
 
 # List comprehension
 l1 = [i**2 for i in range(10)] 
 # l1 = [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
 l2 = [3*n + 1 for n in range(10) if n % 2 == 0]
 # l2 = [7, 13, 19, 25, 31]
+
 # %% Slide: Dictionaries
 
 # Dictionaries
 d = {'first': 1,
      'second': 'two',
-     'third': {'A': [3, 4, 5], 'B': True}}
+     'third': {'A': [3, 4, 5],
+               'B': True}}
+
+
 # Access elements : d['first'] = 1, d['second'] = 'two'
 #                   d['third'] = {'A': [3, 4, 5], 'B': True}
 #                   d['third']['A'] = [3, 4, 5]
@@ -79,9 +85,7 @@ while i < 10:
 
 def add(a, b=1): # NO NEED to define the type, b has a default value
     return a + b
-# add(0.5, 2) = 2.5
-# add(1) = 2
-# add() -> ERROR
+# add(0.5, 2) = 2.5, add(1) = 2, add() -> ERROR
 
 
 # Possibility of having a variable number of parameters and outputs
@@ -91,16 +95,15 @@ def doSomething(x, y, z, p1=1, p3='red'):
     return out1, out2  # returns a list of two elements
 
 out = doSomething(1, 2, 3)  # out[0] = 3, out[1] = 'red3'
-# -- shorter equivalent way
 value, flag = doSomething(1, 2, 3)  # value = 3, flag = 'red3'
 
 
 # General form of a function (cf. function plot of matplotlib)
-def myFuncThatDoThings(*args, **kwargs):
+def myFuncThatDoesThings(*args, **kwargs):
     pass
 # args is a list, with non keyword argument (ex: a in add)
-# kwargs is a dictionnary, with keywords arguments (ex: b=1 in add)
-# * and ** are just a notation to 'unpack' list and dictionnary
+# kwargs is a dictionary, with keywords arguments (ex: b=1 in add)
+# forget about * and **, they are just a notation to 'unpack' them
 # keywords arguments ALWAYS at the end (ex: add(b=1, a) -> ERROR)
 
 # %% Slide: File IO
