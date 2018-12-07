@@ -258,3 +258,6 @@ if saveFig:
     else:
         scheme = schemeX+schemeY+schemeZ
     plt.savefig('eigenvalues{}.pdf'.format(scheme), bbox_inches='tight')
+
+# Show plot
+plt.show()
