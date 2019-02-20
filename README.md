@@ -10,5 +10,13 @@ Source files of the presentation, see the README.md inside
 
 Python script for interactive examples (and eventually more ...)
 
+## exercices
+
+Python script for exercices
+
+## doc
+
+Some usefull external documentation
+
 [MarkDown documentation](https://docs.gitlab.com/ee/user/markdown.html) - General synthax for *.md* files
 
