@@ -1,10 +1,10 @@
 # Python presentation for PhD seminar (19/03/2018, 17-18h)
 
-Or, how to introduce python to applied & pure mathematics PhD students ...
+Or, how to introduce python to applied & pure mathematics students and researchers ...
 
-## presentation
+## presentations
 
-Source files of the presentation, see the README.md inside
+Presentations and source files for each given seminar, see the README.md inside each directory.
 
 ## examples
 

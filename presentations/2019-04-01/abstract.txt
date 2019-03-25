@@ -1,0 +1,19 @@
+An (other one) introduction to Python
+
+You may have heard of it, you may fear it, love it, or simply you just do not care ... in any case,
+the Python graduate seminar is back !
+Why ? Because it is fun ! And also has a large probability to be usefull in you future career.
+Python is not only one programming language in an ocean of other solutions (Matlab, Mathematica, R, ...) : 
+it is a licence-free solution, providing numerous package for mathematical applications, among them linear algebra, 
+optimization, data vizualisation, symbolic computation, and many other ... its application scope goes even way beyond
+scientific computing, and present similarities with many other programming languages.
+Furthermore, Python is supported by a huge community, which provides quick answers to any of your question when you
+write it on a Google reseach bar.
+
+In this seminar, we intend to introduce the main features of Python programming, by means of on-hand examples and applications during which each participant could try some basic Python coding on their personal laptop.
+Hence it is highly recommended to bring your own laptop, and to install on it, prior to the seminar, to install the Anaconda distribution for Python 3.6 (see : https://docs.anaconda.com/anaconda/install/), in order to provide the main Python packages
+and the Spyder development editor.
+Three main themes will be covered :
+- what is Python, and what's hide behind it
+- basics Python programming (variables, functions, loops, ...)
+- introduction on Object Oriented Programming for polynomials computation
