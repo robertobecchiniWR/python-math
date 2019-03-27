@@ -1,0 +1,19 @@
+Cryptographie, ou l'art des messages codés ...
+
+Coder ou décoder un message est un art connu déjà depuis l'empire romain, avec le fameux code César, attribué à l'empereur romain du même nom. Son principe repose sur le changement des lettres du message par une lettre décalée de p lettre(s) dans l'alphabet. Par exemple, pour p = 1, a devient b, b devient c, ... Pour p=2, a deviens c, b deviens d, ... Il est aussi possible de considérer des valeurs négatives pour p : pour p=-1, a devient z, b deviens a, ...
+
+L'idée de l'exercice est d'implémenter une fonction capable de coder et décoder des messages selon ce principe. Objectif : décoder le message donné dans la dernière question !
+
+1) On considère une chaîne de caractère, comprenant l'ensemble des caractères pouvant être contenu dans les mots d'un message (ex : abc = 'abcdefghijklmnopqrstuvwxyz'). Écrire la fonction rotation(abc, p) qui prend comme argument ce type de chaîne de caractère, et retourne une nouvelle chaîne de caractère avec un décalage p allant de gauche à droite si p est positif, ou de droite à gauche si p est négatif.
+    ex : rotation('abcde',1) => 'bcdea' ; rotation('abcde',2) => 'cdeab' ; rotation('abcde',-1) => 'eabcd'
+    indication : si liste=[1,2,3,4,5], alors liste[0:3] = liste[:3] = [1,2,3] et liste[3:5] = liste[3:] = [4,5]. De plus, liste[0:-2] = liste[:-2] = [1,2,3] et liste[-2:5] = liste[-2:] = [4,5].
+
+2) On veux générer un dictionnaire de codage dont les clefs seraient les lettres du message non codé, et les valeurs seraient les lettres correspondante pour le message codé. Écrire la fonction generer_dico(abc,p) qui retourne le dictionnaire de codage correspondant au codage César des caractères présents dans la chaîne de caractères abc, avec le décalage p.
+    ex : generer_dico("abcde",2) => {'a': 'c', 'b': 'd', 'c': 'e', 'd': 'a', 'e': 'b'}
+    indication : utiliser la fonction de la question précédente pour construire la chaîne de caractère après le décalage César, puis construire le dictionnaire en utilisant les deux chaînes de caractères.
+
+3) Écrire la fonction coder_message(msg,p) qui renvoit le message contenu dans la chaîne de caractère msg, codé en utilisant un code César avec décalage p. On utilisera "abcdefghijklmnopqrstuvwxyz" comme ensemble de caractères du message (sans majuscule).
+    ex : coder_message("c'bon le fromage suisse", 2) => "e'dqp ng htqocig uwkuug"
+    indication : générer le dictionnaire de codage, puis initialiser une chaîne de caractère vide msg_code = "", à laquelle on ajouterai chaque caractère du message, codé s'il est dans le dictionnaire de codage, ou non codé s'il n'y est pas (comme le caractère espace " ", ..).
+
+4) En utilisant la fonction coder_message avec un p bien choisi, décoder le message suivant, codé avec un décalage César p=13 : "gh nf yr qebvg q'nyyre qbezve znvagranag" 

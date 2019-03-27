@@ -1,0 +1,24 @@
+Les listes magiques :
+
+Les puissances des premiers nombres entiers consécutifs, lorsqu'on les observe en groupe, ont des propriétés parfois troublantes, grâce à la magie de l'arithmétique. En voici une première illustration ...
+
+1) Écrire une fonction liste_puissances(p,n), qui retourne la liste des n premiers nombres entiers en partant de 0, 
+chacun élevés à la puissance p
+    ex : liste_puissances(1,5) devra retourner [0, 1, 2, 3, 4], liste_puissance(2,10) devra retourner [0, 1, 4, 9, 16, 25, 36, 49, 64, 81], etc ...
+
+2) Écrire une fonction dernier_chiffre qui prend pour argument un nombre, et renvois son dernier chiffre (sous format d'entier)
+    ex :  - dernier_chiffre(50) = 0
+            - dernier_chiffre(123) = 3
+            - dernier_chiffre(12) + dernier_chiffre(53) = 5
+    Indication : on pourra utiliser la fonction str(..) qui transforme son argument en chaîne de caractère, et la fonction int(...) qui transforme son argument en entier.
+
+3) En utilisant les fonctions précédentes, écrire une fonction liste_magique(p,n) qui retourne la liste des derniers chiffres 
+des n premiers nombres entiers en partant de 0, chacun élevés à la puissance p
+    ex : liste_magique(1,5) devra retourner [0, 1, 2, 3, 4], liste_magique(2,10) devra retourner [0, 1, 4, 9, 6, 5, 6, 9, 4, 1], etc ...
+
+4) On fixe n=10, et on considère le résultat de liste_magique pour toutes les puissances p paires (p=2,4,6,8,10,12, ...).
+    Que peut-on observer ?
+    Que peut-on observer si l'on somme termes-à-termes les listes obtenues pour des puissances paires consécutives (p=2 et 4, ou p = 6 et 8, ...) ?
+
+5) Toujours avec n=10, on considère maintenant le résultat de liste_magique pour les puissances p impaires (p=1,3,5,7,9,11,...).
+    Que peut-on observer ?
