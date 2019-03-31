@@ -11,9 +11,10 @@ Furthermore, Python is supported by a huge community, which provides quick answe
 write it on a Google research bar.
 
 In this seminar, we intend to introduce the main features of Python programming, by means of on-hand examples and applications during which each participant could try some basic Python coding on their personal laptop.
-Hence it is highly recommended to bring your own laptop, and to install on it, prior to the seminar, to install the Anaconda distribution for Python 3.6 (see : https://docs.anaconda.com/anaconda/install/), in order to provide the main Python packages
+Hence it is highly recommended to bring your own laptop, and to install on it, prior to the seminar, the Anaconda distribution for Python 3.6 (see : https://docs.anaconda.com/anaconda/install/). This will provide the main Python packages
 and the Spyder development editor.
 Three main themes will be covered :
 - what is Python, and what's hide behind it
 - basics Python programming (variables, functions, loops, ...)
+- introduction to numpy, scipy and matplotlib
 - introduction on Object Oriented Programming for polynomials computation
