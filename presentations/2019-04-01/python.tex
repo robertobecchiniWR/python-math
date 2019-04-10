@@ -408,24 +408,29 @@ Tuples are lists of fixed size with non-mutable elements
 def encodeMsg(msg, offset):
     abc = 'abcdefghijklmnopqrstuvwxyz'
     abc_code = abc[offset:]+abc[:offset]
-    dico = dict(zip(abc, abc_code))
+    # Build a coding dictionary
+    dico = {}
+    for i in range(len(abc)):
+        dico[abc[i]] = abc_code[i]
+    # Shorter version
+    # dico = dict(zip(abc, abc_code))
+    # Translate the message
     msg_code = ''
     for c in msg:
-        if c in dico:
-            msg_code += dico[c]
-        else:
-            msg_code += c
+        msg_code += dico[c] if c in dico else c
+    # Shorter version
+    # msg_code = ''.join([dico[c] if c in dico else c for c in msg])
     return msg_code
     
-msg_code = encodeMsg("w'nv snvyyv nggraqer", 13)
-print(msg_code)
+print(encodeMsg("w'nv snvyyv nggraqer", 13))
 \end{pythoncode}
 }
 \begin{frame}{Exercice 2 : the Caesar cipher}
 $\rightarrow$ decode the following message, encrypted with the Caesar cipher with offset $-13$ :
+\vspace*{-20pt}
 \begin{center}
 	"w'nv snvyyv nggraqer"
-\end{center}\pause
+\end{center}\vspace*{-10pt}\pause
 \pythonCode
 \end{frame}
 
@@ -513,7 +518,7 @@ $\rightarrow$ how to quickly plot the values of a matrix with colorbar ?
 \defverbatim[colored]\pythonCode{
 \begin{pythoncode}
 from scipy.optimize import curve_fit
-...
+... incoming
 \end{pythoncode}
 }
 \begin{frame}{Exercise : curve fitting}
