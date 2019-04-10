@@ -212,7 +212,7 @@ r = bool(5)  # Alternative definition, False only for 0 or None
 } 
 \begin{frame}{Basic variables types and operations}
 \pythonCode\vspace*{-20pt}
-$\rightarrow$ find how to compute the floor of any number
+$\rightarrow$ find how to round any number to the closest integer
 \end{frame}
 
 \defverbatim[colored]\pythonCode{
@@ -459,6 +459,7 @@ Optimized python library for matrix manipulation
 \vspace*{-5pt}\pythonCode
 \end{frame}
 
+
 \defverbatim[colored]\pythonCode{
 \begin{pythoncode}
 from scipy import optimize as spo 
@@ -482,7 +483,46 @@ Scipy add a collection of algorithms adapted to numpy arrays, e.g :
 $\rightarrow$ how to compute the eigenvalues of a matrix ? \\
 $\rightarrow$ how to define a sparse circulant matrix ? \\
 $\rightarrow$ how to compute a curve fitting from given data ?
+\end{frame}
 
+
+\defverbatim[colored]\pythonCode{
+\begin{pythoncode}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(-1, 1, num=200)
+plt.plot(x, np.exp(x), '--', label='Initial data $e^{x}$')
+x_mod = x[::20]
+y_mod = np.exp(x_mod) + 0.1*np.random.randn(x_mod.size)
+plt.plot(x_mod, y_mod, 'o', label='Measured data')
+
+plt.xlabel('$x$')
+plt.ylabel('Data')
+plt.grid()
+plt.legend()
+\end{pythoncode}
+}
+\begin{frame}{Plotting data with Matplotlib}
+Library for data representation similar to Matlab or equivalents
+\vspace*{-5pt}\pythonCode\vspace*{-20pt}
+$\rightarrow$ how to plot data with symbol and lines together ?\\
+$\rightarrow$ how to quickly plot the values of a matrix with colorbar ?
+\end{frame}
+
+\defverbatim[colored]\pythonCode{
+\begin{pythoncode}
+from scipy.optimize import curve_fit
+...
+\end{pythoncode}
+}
+\begin{frame}{Exercise : curve fitting}
+Perform a curve fitting of the previous measured data, with an objective function of the form $\exp(\alpha x)$\pause
+\vspace*{-5pt}\pythonCode
+\end{frame}
+
+\begin{frame}{Introduction to object oriented programming}
+Incoming ...
 \end{frame}
 
 \end{document}
